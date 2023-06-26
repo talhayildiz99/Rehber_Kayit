@@ -206,6 +206,7 @@
             this.DgvRehber.RowTemplate.Height = 24;
             this.DgvRehber.Size = new System.Drawing.Size(577, 375);
             this.DgvRehber.TabIndex = 24;
+            this.DgvRehber.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRehber_CellClick);
             // 
             // Form1
             // 
@@ -216,7 +217,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Rehber Kayıt";
             this.Load += new System.EventHandler(this.Form1_Load);

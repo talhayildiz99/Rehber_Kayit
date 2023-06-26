@@ -24,7 +24,7 @@ namespace Rehber_Kayit
         {
             DataTable dataTable = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter("Select * From TblKisiler", baglanti);
-            adapter.Fill(dataTable);
+                adapter.Fill(dataTable);
             DgvRehber.DataSource = dataTable;
         }
 
@@ -54,6 +54,16 @@ namespace Rehber_Kayit
             MessageBox.Show("Kayıt Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();
             Temizle();
+        }
+
+        private void DgvRehber_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = DgvRehber.SelectedCells[0].RowIndex;
+            TxtId.Text = DgvRehber.Rows[secilen].Cells[0].Value.ToString();
+            TxtAd.Text = DgvRehber.Rows[secilen].Cells[1].Value.ToString();
+            TxtSoyad.Text = DgvRehber.Rows[secilen].Cells[2].Value.ToString();
+            MskTelefon.Text = DgvRehber.Rows[secilen].Cells[3].Value.ToString();
+            TxtMail.Text = DgvRehber.Rows[secilen].Cells[4].Value.ToString();
         }
     }
 }
